@@ -2,11 +2,11 @@ Spectral energy distributions (SEDs) computed by POSSIS (Bulla 2019)
 
 1) FILENAME
 
-nsns_nphX_mejdynY_mejwindZ_phiW.txt
-X: number of Monte Carlo packets
-Y: mass in dynamical ejecta
-Z: mass in post-merger/wind ejecta
-W: half-opening angle of the dynamical-ejecta lanthanide-rich component
+nsns_nphX_mejdynY_mejwindZ_phiW.txt	
+X: number of Monte Carlo packets	
+Y: mass in dynamical ejecta	
+Z: mass in post-merger/wind ejecta	
+W: half-opening angle of the dynamical-ejecta lanthanide-rich component	
 
 2) FILE FORMAT
 
