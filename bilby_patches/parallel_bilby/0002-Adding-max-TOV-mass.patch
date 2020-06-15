@@ -1,0 +1,43 @@
+From 403c9b5d34c61ba7d3e714f2e5f89710b5440a57 Mon Sep 17 00:00:00 2001
+From: Tsun Ho Pang <tsun-ho.pang@ligo.org>
+Date: Sat, 21 Dec 2019 05:35:20 -0800
+Subject: [PATCH 2/2] Adding max TOV mass in parallel bilby
+
+---
+ src/generation.py | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/generation.py b/src/generation.py
+index 1215bc3..ff6fdd2 100644
+--- a/src/generation.py
++++ b/src/generation.py
+@@ -167,6 +167,12 @@ def get_args():
+         type=float,
+         help="Minimum TOV mass"
+     )
++    parser.add(
++        "--ns-mass-max",
++        default=None,
++        type=float,
++        help="Maximum TOV mass"
++    )
+     args = parser.parse_args()
+ 
+     return args
+@@ -182,10 +188,10 @@ def main():
+         conv = conversion.convert_to_lal_binary_neutron_star_parameters
+         fdsm = bilby.gw.source.lal_binary_neutron_star
+         priors = bilby.gw.prior.BNSPriorDict(args.prior_file)
+-    elif args.path_to_eos_data is not None and args.ns_mass is not None:
+-        print("Running with EOS tables in {0} and a minimum TOV mass of {1} soloar masses\n".format(args.path_to_eos_data, args.ns_mass))
++    elif args.path_to_eos_data is not None and args.ns_mass is not None and args.ns_mass_max is not None:
++        print("Running with EOS tables in {0}, a minimum TOV mass of {1} soloar masses and a maximum TOV mass of {2} soloar masses\n".format(args.path_to_eos_data, args.ns_mass, args.ns_mass_max))
+         #define the custom-made parameter conversion function here
+-        function_class = conversion.eos_convert_function(path2data=args.path_to_eos_data, nsMass=args.ns_mass)
++        function_class = conversion.eos_convert_function(path2data=args.path_to_eos_data, nsMass=args.ns_mass, nsMassMax=args.ns_mass_max)
+         conv = function_class.convert_to_lal_binary_neutron_star_parameters_with_eos
+         #the freq domain source model is the same
+         fdsm = bilby.gw.source.lal_binary_neutron_star
+-- 
+2.22.0
+

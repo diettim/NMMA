@@ -1,0 +1,38 @@
+From 7da2377384cd6ec63593af1de7cef63ba7940463 Mon Sep 17 00:00:00 2001
+From: Tsun Ho Pang <tsun-ho.pang@ligo.org>
+Date: Sat, 21 Dec 2019 05:36:35 -0800
+Subject: [PATCH 2/2] Adding max TOV mass in conversion functions for EOS
+ sampling
+
+---
+ bilby/gw/conversion.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/bilby/gw/conversion.py b/bilby/gw/conversion.py
+index 3f19d312..cad70af4 100644
+--- a/bilby/gw/conversion.py
++++ b/bilby/gw/conversion.py
+@@ -319,9 +319,10 @@ def convert_to_lal_binary_neutron_star_parameters(parameters):
+     return converted_parameters, added_keys
+ 
+ class eos_convert_function():
+-    def __init__(self, path2data, nsMass):
++    def __init__(self, path2data, nsMass, nsMassMax):
+         self.path2data=path2data
+         self.nsMass=nsMass
++        self.nsMassMax=nsMassMax
+ 
+     def convert_to_lal_binary_neutron_star_parameters_with_eos(self, parameters):
+ 
+@@ -337,7 +338,7 @@ class eos_convert_function():
+         EOSidx = int(parameters['EOS']) + 1
+         m, Lambda = np.loadtxt('{0}/{1}.dat'.format(self.path2data, EOSidx), unpack=True, usecols=[1,2])
+ 
+-        if m[-1] < self.nsMass or mass_1_source < m[0] or mass_1_source > m[-1] or mass_2_source < m[0] or mass_2_source > m[-1]:
++        if m[-1] < self.nsMass or m[-1] > self.nsMassMax or mass_1_source < m[0] or mass_1_source > m[-1] or mass_2_source < m[0] or mass_2_source > m[-1]:
+             lambda1 = -1.
+             lambda2 = -1.
+ 
+-- 
+2.22.0
+

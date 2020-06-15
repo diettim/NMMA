@@ -1,0 +1,49 @@
+From 0b4a98420ee646d6cbbeb41f5691c61e45cfe774 Mon Sep 17 00:00:00 2001
+From: Tsun Ho Pang <tsun-ho.pang@ligo.org>
+Date: Tue, 12 May 2020 09:22:16 -0700
+Subject: [PATCH] Adding EOS weighting
+
+---
+ src/generation.py | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/generation.py b/src/generation.py
+index ff6fdd2..7f3457b 100644
+--- a/src/generation.py
++++ b/src/generation.py
+@@ -161,6 +161,12 @@ def get_args():
+         type=str,
+         help="Path to eos data"
+     )
++    parser.add(
++        "--path-to-eos-weight",
++        default=None,
++        type=str,
++        help="Path to eos weight"
++    )
+     parser.add(
+         "--ns-mass",
+         default=None,
+@@ -188,7 +194,7 @@ def main():
+         conv = conversion.convert_to_lal_binary_neutron_star_parameters
+         fdsm = bilby.gw.source.lal_binary_neutron_star
+         priors = bilby.gw.prior.BNSPriorDict(args.prior_file)
+-    elif args.path_to_eos_data is not None and args.ns_mass is not None and args.ns_mass_max is not None:
++    elif args.path_to_eos_data is not None and args.path_to_eos_weight is not None and args.ns_mass is not None and args.ns_mass_max is not None:
+         print("Running with EOS tables in {0}, a minimum TOV mass of {1} soloar masses and a maximum TOV mass of {2} soloar masses\n".format(args.path_to_eos_data, args.ns_mass, args.ns_mass_max))
+         #define the custom-made parameter conversion function here
+         function_class = conversion.eos_convert_function(path2data=args.path_to_eos_data, nsMass=args.ns_mass, nsMassMax=args.ns_mass_max)
+@@ -208,8 +214,8 @@ def main():
+             print("Prior on lambda2 is not a constraint, changing it to a default constraint.\n")
+             priors['lambda_2'] = bilby.core.prior.Constraint(name='lambda_2', minimum=0., maximum=np.inf)
+         if 'EOS' not in priors.keys():
+-            print("Did not setup prior for EOS, using all the EOSs in the EOS data path\n")
+-            priors['EOS'] = bilby.core.prior.Uniform(name='EOS', minimum=0, maximum=2000., boundary=None)
++            print("Did not setup prior for EOS, using all the EOSs in the EOS data path and the weighting in {0}\n".format(args.path_to_eos_weight))
++            priors['EOS'] = bilby.core.prior.Interped(name='EOS', minimum=0, maximum=5000., xx=np.linspace(0.,5000.,num=5001), yy=np.loadtxt(args.path_to_eos_weight))
+     else:
+         conv = conversion.convert_to_lal_binary_black_hole_parameters
+         fdsm = bilby.gw.source.lal_binary_black_hole
+-- 
+2.22.0
+
