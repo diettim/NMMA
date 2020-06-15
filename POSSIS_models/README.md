@@ -9,13 +9,13 @@ Z: mass in post-merger/wind ejecta <br/>
 W: half-opening angle of the dynamical-ejecta lanthanide-rich component	<br/>
 
 **2) FILE FORMAT**
-
+<pre> 
 ###################################################<br/>
 Nobs (number of viewing angles)<br/>
 Nwave (number of wavelength bins)<br/>
 Ntime (number of time bins), t_i (days), t_f (days)<br/>
 #################### iobs = 0 #####################<br/>
-<pre>                itime=0    itime=1 ..........<br/>
+                itime=0    itime=1 ..........<br/>
 iwave=0  wave	  flux      flux   ..........<br/>
 iwave=1  wave	  flux      flux   ..........<br/>  
 .         .         .         .    ..........<br/>
