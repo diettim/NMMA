@@ -29,6 +29,7 @@ iwave=1  wave	  flux      flux   ..........<br/>
 
 	 
 **3) NOTES:**
+
 - Viewing angles are from equator (edge-on) to pole (face-on)
   equally-spaced in cosine (e.g. 5 viewing angles corresponds 
   to cosine(theta) = 0, 0.25, 0.5, 0.75, 1).<br/>
