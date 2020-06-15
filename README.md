@@ -6,4 +6,5 @@ The individual directories contain:
 EOS                -- the chiral EFT EOSs used for our study
 POSSIS_lightcurves -- EM lightcurves that used as input for gwemlightcurves 
 bilby_patches      -- all necessary code changes to redo our analysis with parallel_bilby
+gwemlightcurve_intructions -- instructions to use gewmlightcurves for our analysis
 posterior_samples  -- all posterior samples from our individual analysis steps
