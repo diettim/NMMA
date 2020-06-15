@@ -15,13 +15,13 @@ Nobs (number of viewing angles)<br/>
 Nwave (number of wavelength bins)<br/>
 Ntime (number of time bins), t_i (days), t_f (days)<br/>
 #################### iobs = 0 #####################<br/>
-&#9                 itime=0   itime=1 ..........<br/>
+<pre>            itime=0   itime=1 ..........<br/>
 iwave=0  wave	  flux      flux   ..........<br/>
 iwave=1  wave	  flux      flux   ..........<br/>  
 .         .         .         .    ..........<br/>
 .         .         .         .    ..........<br/>
 .         .         .         .    ..........<br/>
-.         .         .         .    ..........<br/>
+.         .         .         .    ..........<br/> <pre>
 #################### iobs = 1 #####################<br/>
 .<br/>
 .<br/>
