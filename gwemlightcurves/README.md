@@ -1,6 +1,8 @@
 # gwemlightcurves  
 
-gwemlightcurves is a free software backage that is available at https://github.com/mcoughlin/gwemlightcurves. It can be used to predict and analyse lightcurves and to connect the lightcurves to ejecta parameters as well as binary properties. Further details about the installation and general usage can be found on the main gwemlightcurves webpage. 
+gwemlightcurves is a free software backage that is available at https://github.com/mcoughlin/gwemlightcurves. It can be used to predict and analyse lightcurves and to connect the lightcurves to ejecta parameters as well as binary properties. Further details about the installation and general usage can be found on the main gwemlightcurves webpage.  
+For further questions, please contact M. Coughlin, who is the main developer of gwemlightcurves.  
+
 
 ### GW170817
 
