@@ -4,18 +4,18 @@
 Data and code realease
 
 The individual directories contain:   
-### EOS  
+**[EOS](https://github.com/diettim/NMMA/tree/master/EOS)**  
 --> the chiral EFT EOSs used for our study  
 
-### POSSIS_models  
+**[POSSIS_models](https://github.com/diettim/NMMA/tree/master/POSSIS_models)**  
 --> Kilonova spectral energy distributions from POSSIS used as input for gwemlightcurves  
 
-### bilby_patches  
+**[bilby_patches](https://github.com/diettim/NMMA/tree/master/bilby_patches)**  
 --> all necessary code changes to redo our analysis with parallel_bilby  
 
-### gwemlightcurve_intructions  
+**[gwemlightcurve_intructions](https://github.com/diettim/NMMA/tree/master/gwemlightcurves)**  
 --> instructions to use gewmlightcurves for our analysis  
 
-### posterior_samples  
+**[posterior_samples](https://github.com/diettim/NMMA/tree/master/posterior_samples)**  
 --> all posterior samples from our individual analysis steps  
 
