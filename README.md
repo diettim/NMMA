@@ -1,5 +1,5 @@
 # NMMA
-**New Constraints on the Supranuclear Equation of State and the Hubble Constant from  Nuclear Physics - Multi-Messenger Astronomy**  
+***New Constraints on the Supranuclear Equation of State and the Hubble Constant from  Nuclear Physics - Multi-Messenger Astronomy***  
 Data and code realease
 
 The individual directories contain:   
