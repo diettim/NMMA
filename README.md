@@ -1,7 +1,7 @@
 ## Nuclear Physics - Multi-messenger Astronomy
 [***New Constraints on the Supranuclear Equation of State and the Hubble Constant from  Nuclear Physics - Multi-Messenger Astronomy***](https://arxiv.org/pdf/2002.11355.pdf) *by T. Dietrich, M. W. Coughlin, P. T. H. Pang, M. Bulla, J. Heinzel, L. Issa, I. Tews, S. Antier*
 
-Data and code realease
+**Data and code realease**
 
 The individual directories contain:   
 **[EOS](https://github.com/diettim/NMMA/tree/master/EOS)**  
