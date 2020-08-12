@@ -8,3 +8,6 @@ The patches are based on [bilby](https://pypi.org/project/bilby/) using the git 
 
 ## parallel_bilby
 The patches are based on [parallel_bilby](https://pypi.org/project/parallel-bilby/) using the git hash 5f585f56f0ed72e4a89437ec816e2dacd7f19b93 <br> 
+
+## bilby_pipe
+The git hash version c4fdec4bb13d656c417f6c6ad5fbe10428027acf is used <br>
