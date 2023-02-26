@@ -19,3 +19,5 @@ The individual directories contain:
 **[posterior_samples](https://github.com/diettim/NMMA/tree/master/posterior_samples)**  
 --> all posterior samples from our individual analysis steps  
 
+**[hubble_constant](https://github.com/diettim/NMMA/tree/master/hubble_constant)**
+--> posterior samples on the Hubble constant estimate
